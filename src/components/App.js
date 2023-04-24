@@ -1,3 +1,5 @@
+import '../styles/scss/styles.scss';
+
 
 function App() {
   return (
