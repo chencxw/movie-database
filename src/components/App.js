@@ -1,4 +1,5 @@
 import '../styles/scss/styles.scss';
+import NavMenu from './NavMenu';
 
 
 function App() {
