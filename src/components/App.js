@@ -3,6 +3,7 @@ import NavMenu from './NavMenu';
 import Header from './Header';
 import FilterButtons from './FilterButtons';
 import MovieCard from './MovieCard';
+import Footer from './Footer';
 
 
 function App() {
