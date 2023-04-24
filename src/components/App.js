@@ -1,6 +1,8 @@
 import '../styles/scss/styles.scss';
 import NavMenu from './NavMenu';
 import Header from './Header';
+import FilterButtons from './FilterButtons';
+import MovieCard from './MovieCard';
 
 
 function App() {
