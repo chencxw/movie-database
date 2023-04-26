@@ -1,7 +1,18 @@
+import { useEffect } from 'react';
+import { appTitle } from '../globals/globals';
 
 function PageFavourite() {
+
+  useEffect(() => {
+    document.title = `${appTitle} - Favourites`;
+  }, [])
+
   return (
-    <div>PageFavourite</div>
+    <main>
+      <section className="favourites">
+        <h2>Favourites</h2>
+      </section>
+    </main>
   )
 }
 

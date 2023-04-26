@@ -1,0 +1,93 @@
+@use '../base/variables' as *;
+
+// Hamburger menu
+.hamburger-btn{
+    border: none;
+    background: none;
+
+    .line {
+        width: 40px;
+        height: 5px;
+        margin: 5px auto;
+        background-color: $light;
+        display: block;
+        transition: all 0.3s ease-in-out;
+
+        .show &:nth-child(2) {
+            width: 0;
+        }
+
+        .show &:nth-child(1), .show &:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .show &:nth-child(1) {
+            transform: translateY(10px);
+        }
+
+        .show &:nth-child(3) {
+            transform: translateY(-10px) rotate(90deg);
+        }
+
+    }
+
+    .show & {
+        transition: all 0.3s ease-in-out;
+        transition-delay: 0.6s;
+        transform: rotate(45deg);
+    }
+
+    @media (min-width: 50em) {
+        display: none;
+    }
+}
+
+// Nav dropdown menu
+.nav-dropdown {
+    width: 100%;
+    background-color: $dark;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height 0.5s ease, visibility 0s 0.5s;
+
+    .show & {
+        transition: height 0.5s ease, visibility 0s;
+        visibility: visible;
+        height: 150px;
+    }
+
+    ul{
+    list-style:none;   
+        li{
+            margin-bottom: 1rem;
+            a{
+                text-decoration: none;
+                color: $light;
+            }
+            a:visited {
+                color: $light;
+            }
+        }
+    }
+
+    @media (min-width: 50em) {
+        width: fit-content;
+        height: auto;
+        visibility: visible;
+        transition: none;
+
+        .show & {
+            transition: none;
+            height: auto;
+        }
+
+        ul {
+            display: flex;
+            gap: 2rem;
+        }
+        li {
+            margin-bottom: 0rem;
+        }
+    }
+}

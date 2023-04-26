@@ -1,8 +1,23 @@
 import { NavLink } from 'react-router-dom';
 
-function NavMenu() {
+function NavMenu({showHideNav}) {
+
+  function closeNavMenu(e){
+    if(window.innerWidth < 600) {
+      showHideNav();
+    }else{
+      e.target.blur()
+    }
+  }
+
   return (
-    <div>NavMenu</div>
+    <nav className="nav-dropdown" onClick={closeNavMenu} >
+      <ul>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/favourites">Favourites</NavLink></li>
+      </ul>
+    </nav>
   )
 }
 

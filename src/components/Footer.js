@@ -2,7 +2,12 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div className='footerWrapper'>
+      <footer>
+        <p> &copy; 2023 made by Brice Chen, Crystal Chen, and Yui Sakamoto. </p>
+
+      </footer>
+    </div>
   )
 }
 
