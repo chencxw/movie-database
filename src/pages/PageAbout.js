@@ -5,4 +5,4 @@ function PageAbout() {
   )
 }
 
-export default PageAbout
+export default PageAbout;

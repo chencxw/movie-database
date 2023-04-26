@@ -6,10 +6,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 // Pages
-import PageHome from '../pages/PageHome.js';
-import PageAbout from '../pages/PageAbout.js';
-import PageFavourite from '../pages/PageFavourite.js';
-import PageIndividualMovie from '../pages/PageIndividualMovie.js';
+import PageHome from '../pages/PageHome';
+import PageAbout from '../pages/PageAbout';
+import PageFavourite from '../pages/PageFavourite';
+import PageIndividualMovie from '../pages/PageIndividualMovie';
 import PageNotFound from '../pages/PageNotFound';
 
 function AppRouter() {

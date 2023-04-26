@@ -5,4 +5,4 @@ function PageFavourite() {
   )
 }
 
-export default PageFavourite
+export default PageFavourite;
