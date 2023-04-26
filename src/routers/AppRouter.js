@@ -27,7 +27,7 @@ function AppRouter() {
         <Footer />
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default AppRouter
+export default AppRouter;
