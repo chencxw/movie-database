@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavMenu from './NavMenu';
+import logo from '../images/logo.png';
 
 function Header() {
 
@@ -25,8 +26,8 @@ function Header() {
 
 
   return (
-    <header className={ navOpen? 'show' : undefined }>
-      <h1>Logo</h1>
+    <header className={ navOpen? 'show' : undefined } id="page-header" >
+      <Link className="logo" to={'/'}><img src={logo} alt="logo" /></Link>
       <button className='hamburger-btn' onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
         <span className="hamburger-icon">
           <span className="line"></span>

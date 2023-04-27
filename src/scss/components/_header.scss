@@ -1,10 +1,26 @@
 @use '../base/variables' as *;
 
-header {
+#page-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  z-index: 10;
+  background-color: transparent;
+  transition: background-color 0.5s linear;
+  &.show {
+    background-color: $dark;
+    transition: background-color 0.1s linear;
+  }
+  .logo {
+    width: 100px;
+    margin-left: 1rem;
+  
+  }
 
 //   h1 {
 
