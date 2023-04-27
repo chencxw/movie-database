@@ -2,8 +2,8 @@
 function MovieCard({movies}) {
 
   return (
-    <div className='posterGrid'>
-      <ul>
+    <div>
+      <ul className='posterGrid'>
         {movies.map(movies => (
           <li key={movies.id}>
             <h2>{movies.title}</h2>
