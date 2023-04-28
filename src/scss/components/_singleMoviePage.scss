@@ -1,0 +1,27 @@
+.single-movie{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    img{
+        height: 22rem;
+        object-fit: cover;
+    }
+}
+
+.movie-info {
+    padding: 0rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    h1 {
+        position: relative;
+        font-weight: normal;
+        grid-column: 1 / 4;
+    }
+    .movie-genre {
+        grid-column: 1 / 4;
+    }
+    .movie-overview{
+        grid-row: 4/5;
+        grid-column: 1 / 4;
+    }
+}

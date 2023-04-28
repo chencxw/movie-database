@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { appTitle, apiKey } from '../globals/globals';
+import { appTitle, apiKey, API_TOKEN } from '../globals/globals';
 import MovieCard from '../components/MovieCard';
 import MovieBanner from '../components/MovieBanner';
-import MoreInfoButton from '../components/MoreInfoButton';
+import FilterButtons from '../components/FilterButtons';
 
 
-
-function PageHome() {
+function PageHome({sort = 'popular'}) {
 
   const baseUrl = 'https://api.themoviedb.org/3'
   const [movies, setMovies] = useState([]);
@@ -17,28 +16,26 @@ function PageHome() {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      let allMovies = [];
-      let page = 1;
-      let totalPages = 1;
+      
+        const response = await fetch(`${baseUrl}/movie/${sort}?language=en-US&page=1`, {  
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + API_TOKEN
+        }});
+        let data = await response.json();
 
-      while (page <= totalPages) {
-        const response = await fetch(`${baseUrl}/movie/popular?api_key=${apiKey}&page=${page}`);
-        const data = await response.json();
+        data = data.results.splice(0, 12);
 
         // console.log(response);
         // console.log(data);
-
-
-        allMovies = allMovies.concat(data.results);
-        // totalPages = data.total_pages;
-        page++;
-      }
+        //`${baseUrl}/movie/${sort}?api_key=${apiKey}&page=${page}`
    
-      setMovies(allMovies);
+      setMovies(data);
     };
 
     fetchMovies();
-  }, []);
+  }, [sort]);
 
   if (movies.length === 0) {
     return <div>Loading movies...</div>;
@@ -49,11 +46,10 @@ function PageHome() {
     <main>
       <header>
         <MovieBanner  movies={movies} />
-        <MoreInfoButton movies={movies}/>
       </header>
 
       <section>
-        <h1>Popular Movies</h1>
+        <FilterButtons />
         <MovieCard movies={movies} />
       </section>
     </main>

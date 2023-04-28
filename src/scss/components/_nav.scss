@@ -60,18 +60,20 @@
     }
 
     ul{
-    list-style:none;   
-        li{
-            margin-bottom: 1rem;
-            a{
-                text-decoration: none;
-                color: $light;
-            }
-            a:visited {
-                color: $light;
-            }
-        }
+    list-style:none;  
+    } 
+    li{
+        margin-bottom: 1rem;
     }
+    a{
+        text-decoration: none;
+        color: $light;
+    }
+    a:visited {
+        color: $light;
+    }
+        
+
 
     @media (min-width: 50em) {
         background-color: transparent;
