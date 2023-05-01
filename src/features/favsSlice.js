@@ -1,4 +1,4 @@
-import { appStorageName } from '../../globals/globalVariables';
+import { appStorageName } from '../globals/globals';
 import { createSlice } from '@reduxjs/toolkit';
 
 function getFavs(){

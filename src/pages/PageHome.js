@@ -38,7 +38,7 @@ function PageHome({sort = 'popular'}) {
   }, [sort]);
 
   if (movies.length === 0) {
-    return <div>Loading movies...</div>;
+    return <div className= "loadingMovies">Loading movies...</div>;
   }
   
 
