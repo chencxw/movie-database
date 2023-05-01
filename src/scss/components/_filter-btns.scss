@@ -1,0 +1,45 @@
+@media (max-width: 767px){
+  .nav-sort{
+    ul{
+        display:none;
+    }
+  }
+  select{
+    margin: 2rem;
+    height: 50px;
+    width: 225px;
+    
+
+  }
+}
+
+@media (min-width: 768px){
+select{
+    display:none;
+}
+.nav-sort {
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      list-style: none;
+      justify-content: space-around;
+      margin: 2rem 0;
+  
+      li:last-child a {
+        border: none;
+      }
+  
+      li a {
+        text-decoration: none;
+        color: white;
+        border-right: 1px white solid;
+        padding-right: 4rem;
+  
+        &:active,
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

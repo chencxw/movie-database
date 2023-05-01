@@ -1,17 +1,26 @@
-.single-movie{
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+@use '../base/variables' as *;
+
+.single-movie-poster {
+    background: linear-gradient(0deg, rgba(40,40,40,1) 0%, transparent 60%);
     img{
-        height: 22rem;
+        height: 30rem;
         object-fit: cover;
+        position: relative;
+        z-index: -1;
     }
+}
+
+.movie-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
 }
 
 .movie-info {
     padding: 0rem 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    font-family: $headingFont;
     h1 {
         position: relative;
         font-weight: normal;
@@ -23,5 +32,21 @@
     .movie-overview{
         grid-row: 4/5;
         grid-column: 1 / 4;
+        font-family: $bodyFont;
     }
+    p svg {
+        vertical-align: text-bottom;
+    }
+}
+
+.btn-favourite {
+    padding: 0rem 1rem;
+    margin: 1.5rem 0rem;
+}
+
+.trailer {
+    border: 0;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    padding: 1rem;
 }

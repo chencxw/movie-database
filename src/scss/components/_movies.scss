@@ -1,35 +1,94 @@
+@use '../base/variables' as *;
+
 .movie-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   margin: .5rem 2rem;
+  
 }
 
 .movie-card {
   position: relative;
   overflow: hidden;
-  animation: .5s ease-out;
-  // display: block;
-  // width: 100%;
-  // height: 100%;
-  // object-fit: cover;
-  // transition: transform .2s ease-in-out;
-}
+  // animation: fade-in-up .3s ease-out;
 
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    top: 10rem;
+  // @keyframes fade-in-up {
+  //   0% {
+  //     opacity: 0;
+  //     top: 10rem;
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //     top: 0;
+  //   }
+  
+  // }
+
+  .movie-poster {
+    display: block;
+    object-fit: cover;
+    width: auto;
   }
-  100% {
-    opacity: 1;
+
+  &-overlay {
+    background-color: rgba(40, 40, 40, 0.74);
+    font-size: 1rem;
+    display: grid;
+    grid-template-rows: 75px 120px 50px 80px;
+    padding: 1rem;
+    position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 77%;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
+  .movie-overview {
+    height: 5.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  .btn-favourite {
+    padding: 0;
+  }
+  
 }
 
-.movie-card-overlay {
-  background-color: rgba(40, 40, 40, 0.74);
-  font-size: 1rem;
-  display: grid;
+.btn-favourite button {
+  background-color: transparent;
+  border: none;
+  color: $light;
+
+  svg {
+    fill: $light;
+    vertical-align: middle;
+  }
+
+  span {
+    margin-left: .5rem;
+  }
+}
+
+.more-info-button {
+  margin: 1.5rem 0;
+  a {
+    font-size: .8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $light;
+    border: solid 1px $light;
+    border-radius: 20px;
+    padding: .5rem 2rem;
+  }
 }

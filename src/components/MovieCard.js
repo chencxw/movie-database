@@ -1,21 +1,25 @@
 import {Link} from 'react-router-dom';
 import MoreInfoButton from './MoreInfoButton';
-import FavButton from './components/FavButton';
-import { useDispatch } from 'react-redux';
+import FavButton from './FavButton';
+import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
 
-function MovieCard({movies, isFav}) {
+
+function MovieCard({movies}) {
   
   const dispatch = useDispatch();
 
   function handleFavClick( addToFav, obj) {
-    if( addToFav = true ) {
+    if( addToFav === true ) {
       dispatch( addFav(obj) );
     }else{
       dispatch( deleteFav(obj) );
     }
   }
+
+  const favs = useSelector((state) => state.favs.items);
+
 
   return (
     <div className='movie-container'>
@@ -27,19 +31,18 @@ function MovieCard({movies, isFav}) {
               <h2>{movies.title}</h2>
             </div>
             
-            <div className='movie-card-overlay'>
-              <p>{movies.vote_average}</p>
-              <p>{movies.overview}</p>
+            <div className="movie-card-overlay">
+              <p className="movie-rate">{movies.vote_average}</p>
+              <p className="movie-overview">{movies.overview}</p>
+              <div className="btn-favourite">
+                {isFav(favs, null, movies.id) ?
+                  <FavButton movies={movies} remove={true} handleFavClick={handleFavClick} /> :
+                  <FavButton movies={movies} handleFavClick={handleFavClick} />
+                }
+              </div>
               <MoreInfoButton movies={movies}/>
             </div>
-            <div className="btn-favourite">
-              {isFav ?
-                <FavButton movies={movies} remove={true} handleFavClick={handleFavClick} /> :
-                <FavButton movies={movies} handleFavClick={handleFavClick} />
-              }
-
-
-            </div>
+            
           </article>
 
         ))}

@@ -6,7 +6,9 @@ function MoreInfoButton({movies}) {
   const {id} = useParams();
 
   return (
-    <Link to={`/movie/${movies.id}`}>More Info</Link>
+    <div className="more-info-button">
+      <Link to={`/movie/${movies.id}`}>More Info</Link>
+    </div>
   )
 }
 

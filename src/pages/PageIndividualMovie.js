@@ -9,6 +9,9 @@ function PageIndividualMovie() {
   const { id } = useParams();
   const [movie, setMovie] = useState();
 
+  // https://api.themoviedb.org/3/movie/640146/videos?api_key=1e55f4bc336e25a4e8d5e6a0873de6c6&language=en-US
+  const [videos, setVideos] = useState();
+
   useEffect(() => {
 
     const fetchMovie = async () => {
@@ -23,7 +26,21 @@ function PageIndividualMovie() {
       setMovie(data);
     }
 
+    const fetchTrailer = async () => {
+      const trailerResponse = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, {
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + API_TOKEN
+      }})
+      let trailerData = await trailerResponse.json();
+
+      setVideos(trailerData);
+    }
+
     fetchMovie();
+
+    fetchTrailer();
 
   }, [])
 
@@ -31,8 +48,7 @@ function PageIndividualMovie() {
     return(
       <main>
         <section className="individual-movie">
-          {movie ? <SingleMovie movie={movie}/> : <p>Loading...</p>}
-
+          {(movie && videos) ? <SingleMovie movie={movie} videos={videos} /> : <p>Loading...</p> }
         </section>
       </main>
     )

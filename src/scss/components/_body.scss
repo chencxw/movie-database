@@ -1,8 +1,11 @@
 @use '../base/variables' as *;
 
 body {
-    background-color: $dark;
-    h1 {
-        text-transform: uppercase;
-    }
+  background-color: $dark;
+  h1 {
+      text-transform: uppercase;
+  }
+  main {
+    height: fit-content;
+  }
 }
