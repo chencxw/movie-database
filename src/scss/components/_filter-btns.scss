@@ -6,9 +6,9 @@
   }
   select{
     margin: 2rem;
-    height: 50px;
+    height: 40px;
     width: 225px;
-    
+
 
   }
 }
@@ -24,17 +24,17 @@ select{
       list-style: none;
       justify-content: space-around;
       margin: 2rem 0;
-  
+
       li:last-child a {
         border: none;
       }
-  
+
       li a {
         text-decoration: none;
         color: white;
         border-right: 1px white solid;
         padding-right: 4rem;
-  
+
         &:active,
         &.active {
           text-decoration: underline;
