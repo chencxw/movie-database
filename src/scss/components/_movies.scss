@@ -10,29 +10,13 @@
 
 .movie-card {
   position: relative;
-  overflow: hidden;
-  // animation: fade-in-up .3s ease-out;
-
-  // @keyframes fade-in-up {
-  //   0% {
-  //     opacity: 0;
-  //     top: 10rem;
-  //   }
-  //   100% {
-  //     opacity: 1;
-  //     top: 0;
-  //   }
-  
-  // }
 
   .movie-poster {
     display: block;
-    object-fit: cover;
-    width: auto;
   }
 
   &-overlay {
-    background-color: rgba(40, 40, 40, 0.74);
+    background-color: rgba(40, 40, 40, 0.888);
     font-size: 1rem;
     display: grid;
     grid-template-rows: 75px 120px 50px 80px;
@@ -41,9 +25,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 77%;
+    height: 100%;
     opacity: 0;
-    transition: opacity .5s;
+    transition: opacity .5s ease-in-out;
 
     &:hover {
       opacity: 1;
@@ -90,5 +74,12 @@
     border: solid 1px $light;
     border-radius: 20px;
     padding: .5rem 2rem;
+  }
+}
+
+.movie {
+  .movie-info {
+    display: flex;
+    flex-direction: column;
   }
 }
