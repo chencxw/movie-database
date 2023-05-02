@@ -6,26 +6,19 @@
   width: 100vw;
 
   img {
-    // filter: brightness(50%);
-    // position: relative;
     object-fit: cover;
-    // height: 100vh;
-    // width: 100%;
-
-    height: auto;
-    width: auto;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.97) 45%, hsla(0, 0%, 100%, 0) 95%);
+    min-height: 20rem;
+    mask-image: linear-gradient(180deg, rgba(40, 40, 40, 0.97) 45%, hsla(0, 0%, 100%, 0) 95%);
+    height: 100%;
   }
 }
 
 .banner-info-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
   position: absolute;
-  left: 1rem;
+  left: 0;
   bottom: 0;
   width: 100%;
+  padding: 0 2rem;
 
   h1 {
     font-size: 1.2rem;
