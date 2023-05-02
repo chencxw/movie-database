@@ -22,27 +22,29 @@ function MovieCard({movies}) {
 
 
   return (
-    <div className='movie-container'>
+    <div className="movie-container">
         {movies.map(movies => (
-          <article className='movie-card' key={movies.id} >
-            <div>
-              <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} className='movie-poster' alt={`${movies.title} Poster`} />
+          <article className="movie" key={movies.id} >
+            <div className="movie-card">
+              <div className="movie-poster">
+                <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={`${movies.title} Poster`} />
+              </div>
+              <div className="movie-card-overlay">
+                <p className="movie-rate">{movies.vote_average}</p>
+                <p className="movie-overview">{movies.overview}</p>
+                <div className="btn-favourite">
+                  {isFav(favs, null, movies.id) ?
+                    <FavButton movies={movies} remove={true} handleFavClick={handleFavClick} /> :
+                    <FavButton movies={movies} handleFavClick={handleFavClick} />
+                  }
+                </div>
+                <MoreInfoButton movies={movies}/>
+              </div>
+            </div>
+            <div className="movie-info">
               <p>{movies.release_date}</p>
               <h2>{movies.title}</h2>
             </div>
-            
-            <div className="movie-card-overlay">
-              <p className="movie-rate">{movies.vote_average}</p>
-              <p className="movie-overview">{movies.overview}</p>
-              <div className="btn-favourite">
-                {isFav(favs, null, movies.id) ?
-                  <FavButton movies={movies} remove={true} handleFavClick={handleFavClick} /> :
-                  <FavButton movies={movies} handleFavClick={handleFavClick} />
-                }
-              </div>
-              <MoreInfoButton movies={movies}/>
-            </div>
-            
           </article>
 
         ))}
