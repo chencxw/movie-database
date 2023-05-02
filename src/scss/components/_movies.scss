@@ -4,13 +4,15 @@
 .movie-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  max-width: 700px;
   gap: 2rem;
   margin: .5rem 2rem;
-  
+  place-items: center;
 }
 
 .movie-card {
   position: relative;
+  max-width: 300px;
 
   .movie-poster {
     display: block;
@@ -47,7 +49,7 @@
   .btn-favourite {
     padding: 0;
   }
-  
+
 }
 
 .btn-favourite button {
