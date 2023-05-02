@@ -15,8 +15,8 @@
 @use './components/singleMoviePage';
 @use './components/filter-btns';
 
-
-
+// Utilities
+@use './utilities/mixins';
 @use './utilities/utility-classes';
 
 // Fonts
