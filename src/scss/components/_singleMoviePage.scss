@@ -18,25 +18,22 @@
 
 .movie-info {
     padding: 0rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     font-family: $headingFont;
     h1 {
-        position: relative;
         font-weight: normal;
-        grid-column: 1 / 4;
-    }
-    .movie-genre {
-        grid-column: 1 / 4;
     }
     .movie-overview{
-        grid-row: 4/5;
-        grid-column: 1 / 4;
         font-family: $bodyFont;
     }
     p svg {
-        vertical-align: text-bottom;
+        vertical-align: middle;
+        fill: $ratingYellow;
     }
+}
+
+.movie-specs {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .btn-favourite {
