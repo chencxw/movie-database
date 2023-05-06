@@ -48,7 +48,7 @@ function PageIndividualMovie() {
     return(
       <main>
         <>
-          {(movie && videos) ? <SingleMovie movie={movie} videos={videos} /> : <p>Loading...</p> }
+          {(movie && videos) ? <SingleMovie movie={movie} videos={videos} /> : <div className='loadingMovies'><p>Loading...</p></div> }
         </>
       </main>
     )
