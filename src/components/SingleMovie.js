@@ -44,7 +44,7 @@ function SingleMovie({movie, videos}) {
         <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={`${movie.title} Poster`} />
       </div>
 
-      <div className="movie-info">
+      <div className="sinlge-movie-info">
         <h1>{movie.title}</h1>
         <div className='movie-specs'>
             <p>{movie.release_date}</p>
@@ -53,7 +53,7 @@ function SingleMovie({movie, videos}) {
         </div>
         <p className="movie-genre">{movie.genres.map((genre) => <span key={genre.id}>{genre.name} | </span>)}</p>
         <p className='movie-overview'>{movie.overview}</p>
-      </div>
+
 
       <div className="btn-favourite">
         {isFav(favs, null, movie.id) ?
@@ -63,6 +63,7 @@ function SingleMovie({movie, videos}) {
       </div>
 
       <iframe className="trailer" src={`https://www.youtube.com/embed/${videos.results[0].key}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      </div>
     </>
   )
 }
