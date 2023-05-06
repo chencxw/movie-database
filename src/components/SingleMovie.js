@@ -57,6 +57,7 @@ function SingleMovie({movie, videos}) {
     <section className="individual-movie" style={matches ? {backgroundImage: "none"} : {backgroundImage: movie.backdrop_path && `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`} }>
       <div className={matches ? "single-movie-poster" : "hide-poster"} >
         <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={`${movie.title} Poster`} />
+        <div className="bottom-gradient"></div>
       </div>
 
       <div className="single-movie-info">
