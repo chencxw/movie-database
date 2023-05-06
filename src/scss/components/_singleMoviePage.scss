@@ -23,7 +23,6 @@
     }
     p svg {
         vertical-align: middle;
-        fill: $ratingYellow;
     }
 }
 
@@ -45,7 +44,7 @@
 @include  mq(50em) {
     .individual-movie {
         margin-bottom: 4rem;
-        padding: 10rem 3rem 5rem;
+        padding: 8rem 3rem 5rem;
         background-size: cover;
         background-position: center;
         position: relative;
@@ -69,20 +68,30 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: linear-gradient(0deg, rgb(40, 40, 40) 1%, transparent 15%);
+        background: linear-gradient(0deg, rgb(40, 40, 40) 1%, transparent 50%);
     }
 
     .single-movie-info {
         max-width: 40vw;
         position: relative;
         z-index: 3;
+        h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+    }
+
+    .movie-genre {
+        margin-bottom: 2rem;
     }
 
     .trailer {
         max-width: 450px;
     }
+}
 
-
-
-
+@include  mq(93.75em) {
+    .individual-movie {
+        padding-left: 8rem;
+    }
 }
