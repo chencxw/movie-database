@@ -10,16 +10,19 @@ function FilterButtons() {
             Popular
           </NavLink>
         </li>
+        <span>|</span>
         <li>
           <NavLink exact to="/sort/top-rated" activeClassName="active">
             Top Rated
           </NavLink>
         </li>
+        <span>|</span>
         <li>
           <NavLink exact to="/sort/now-playing" activeClassName="active">
             Now Playing
           </NavLink>
         </li>
+        <span>|</span>
         <li>
           <NavLink exact to="/sort/upcoming" activeClassName="active">
             Upcoming

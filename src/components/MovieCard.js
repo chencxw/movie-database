@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import MoreInfoButton from './MoreInfoButton';
 import FavButton from './FavButton';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,7 +19,6 @@ function MovieCard({movies}) {
   }
 
   const favs = useSelector((state) => state.favs.items);
-
 
   return (
     <div className="movie-container">
