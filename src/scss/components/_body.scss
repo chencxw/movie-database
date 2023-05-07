@@ -2,15 +2,13 @@
 
 body {
   background-color: $dark;
+  
   h1 {
       text-transform: uppercase;
   }
+
   main {
     height: fit-content;
-  }
-
-  section {
-    margin: 0 2rem 5rem;
   }
   
   .loadingMovies {
