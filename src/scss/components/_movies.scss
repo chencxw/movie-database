@@ -32,7 +32,6 @@
     background-color: rgba(40, 40, 40, 0.888);
     font-size: 1rem;
     display: grid;
-    // grid-template-rows: 75px 110px 50px 80px;
     grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
     padding: .7rem;
     position: absolute;
