@@ -3,10 +3,11 @@
 
 .movie-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  max-width: $laptop;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: 1020px;
+  grid-gap: 20px;
   margin: .5rem auto;
+  justify-content: center;
 }
 
 .movie {
