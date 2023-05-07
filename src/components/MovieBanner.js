@@ -1,6 +1,25 @@
-import MoreInfoButton from "./MoreInfoButton"
+import MoreInfoButton from "./MoreInfoButton";
+import isFav from '../utilities/isFav';
+import FavButton from './FavButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFav, deleteFav } from '../features/favsSlice';
 
 function MovieBanner({movies}) {
+
+  const dispatch = useDispatch();
+
+  function handleFavClick( addToFav, obj) {
+    if( addToFav === true ) {
+      dispatch( addFav(obj) );
+    }else{
+      dispatch( deleteFav(obj) );
+    }
+  }
+
+  const favs = useSelector((state) => state.favs.items);
+
+
+
   return (
     <div className='banner-container'>
       <picture>
@@ -10,8 +29,15 @@ function MovieBanner({movies}) {
       </picture>
       <div className="banner-info-container">
         <h1>{movies[0].title}</h1>
-        {/* <h2>{movies[0].release_date}</h2> */}
-        <MoreInfoButton movies={movies[0]}/>
+        <div className="banner-btns">
+          <div className="btn-favourite">
+            {isFav(favs, null, movies[0].id) ?
+              <FavButton movies={movies[0]} remove={true} handleFavClick={handleFavClick} /> :
+              <FavButton movies={movies[0]} handleFavClick={handleFavClick} />
+            }
+          </div>
+          <MoreInfoButton movies={movies[0]}/>
+        </div>
       </div>
     </div>
   )
