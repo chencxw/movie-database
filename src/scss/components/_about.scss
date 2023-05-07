@@ -1,16 +1,42 @@
+@use '../utilities/mixins' as *;
+
 .about {
-  height: 80vh;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0rem 1.2rem 0rem;
+  max-width: 1200px;
   h2{
-    margin: 6rem 0 3rem 2rem;
-    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  img {
+    width: 80px;
+  }
+  p:nth-child(2) {
+    margin-bottom: 3rem;
   }
 
-  p{
-    margin: 0 auto 2rem;
-    max-width: 487px;
+}
 
+@include mq(50em) {
+  .about {
+    margin: 0rem 5rem;
   }
+}
 
+@include mq(75em) {
+  .about {
+    margin: 0rem 10rem;
+  }
+}
+
+@include mq(93.7em) {
+  .about {
+    margin: 0rem auto;
+  }
 }
 
 

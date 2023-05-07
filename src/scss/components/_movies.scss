@@ -60,6 +60,7 @@
   background-color: transparent;
   border: none;
   color: $light;
+  font-family: $headingFont;
 
   svg {
     fill: $light;
@@ -76,12 +77,13 @@
   a {
     font-family: $headingFont;
     font-size: .8rem;
+    font-family: $headingFont;
     text-transform: uppercase;
     text-decoration: none;
     color: $light;
     border: solid 1px $light;
     border-radius: 20px;
-    padding: .5rem 2rem;
+    padding: .35rem 2rem;
 
     &:hover {
       color: $dark;

@@ -1,7 +1,8 @@
 @use '../base/variables' as *;
+@use '../utilities/mixins' as *;
 
 .single-movie-poster {
-    background: linear-gradient(0deg, rgba(40,40,40,1) 0%, transparent 60%);
+    background: linear-gradient(0deg, rgba(40,40,40,1) 1%, transparent 60%);
     img{
         height: 30rem;
         object-fit: cover;
@@ -10,37 +11,27 @@
     }
 }
 
-.movie-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
-.movie-info {
+.single-movie-info {
     padding: 0rem 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     font-family: $headingFont;
+    margin-bottom: 4rem;
     h1 {
-        position: relative;
         font-weight: normal;
-        grid-column: 1 / 4;
-    }
-    .movie-genre {
-        grid-column: 1 / 4;
     }
     .movie-overview{
-        grid-row: 4/5;
-        grid-column: 1 / 4;
         font-family: $bodyFont;
     }
     p svg {
-        vertical-align: text-bottom;
+        vertical-align: middle;
     }
 }
 
+.movie-specs {
+    display: flex;
+    gap: 1.5rem;
+}
+
 .btn-favourite {
-    padding: 0rem 1rem;
     margin: 1.5rem 0rem;
 }
 
@@ -48,5 +39,59 @@
     border: 0;
     aspect-ratio: 16 / 9;
     width: 100%;
-    padding: 1rem;
+}
+
+@include  mq(50em) {
+    .individual-movie {
+        margin-bottom: 4rem;
+        padding: 8rem 3rem 5rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .hide-poster {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.751) 40%, rgba(0,0,0,0) 65%);
+        img {
+            display: none;
+        }
+    }
+
+    .bottom-gradient {
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgb(40, 40, 40) 1%, transparent 50%);
+    }
+
+    .single-movie-info {
+        max-width: 40vw;
+        position: relative;
+        z-index: 3;
+        h1 {
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+    }
+
+    .movie-genre {
+        margin-bottom: 2rem;
+    }
+
+    .trailer {
+        max-width: 450px;
+    }
+}
+
+@include  mq(93.75em) {
+    .individual-movie {
+        padding-left: 8rem;
+    }
 }
