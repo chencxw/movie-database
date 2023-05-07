@@ -16,7 +16,7 @@ function PageFavourite() {
     <main>
       <section className="favourites">
         <h2>Favourites</h2>
-        {favs.length < 1 ? <p>No movies added to favourites yet. Go back to <Link to="/">home</Link> page to add some </p>:
+        {favs.length < 1 ? <p>No movies added to favourites yet. Go back to the <Link to="/">home</Link> page to add some.</p>:
         <div className="favs-grid">
           <MovieCard  movies={favs} isFav={true} />
         </div>}

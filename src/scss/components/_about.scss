@@ -1,7 +1,7 @@
 @use '../utilities/mixins' as *;
 
 .about {
-  height: 95vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
   max-width: 1200px;
   h2{
     margin-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: normal;
   }
   img {

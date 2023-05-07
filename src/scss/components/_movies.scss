@@ -20,6 +20,10 @@
   }
 }
 
+.movie {
+  max-width: 300px;
+}
+
 .movie-card {
   position: relative;
   color: $light;
@@ -68,6 +72,7 @@
   border: none;
   color: $light;
   font-family: $headingFont;
+  padding: 0px;
 
   svg {
     fill: $light;

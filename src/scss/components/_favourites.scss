@@ -1,8 +1,37 @@
+@use '../utilities/mixins' as *;
+@use '../base/variables' as *;
+
 .favourites{
-  margin-top: 80px;
-  height: 80vh;
+  margin: 10rem 1.2rem 5rem;
+  min-height: 100vh;
+  height: fit-content;
+  max-width: 1020px;
     h2{
-      margin: 6rem 0 3rem 2rem;
-      font-size: 3rem;
+      font-size: 2rem;
+      font-weight: normal;
     }
+  a {
+    color: #fff;
+  }
+  a:hover{
+    color: #727272;
+  }
+}
+
+@include mq(50em) {
+  .favourites {
+    margin: 10rem 5rem 5rem;
+  }
+}
+
+@include mq(75em) {
+  .favourites {
+    margin: 10rem 10rem 5rem;
+  }
+}
+
+@include mq(93.7em) {
+  .favourites {
+    margin: 10rem auto 5rem;
+  }
 }
