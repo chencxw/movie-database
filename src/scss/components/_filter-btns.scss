@@ -1,15 +1,34 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
 @media (max-width: 767px){
   .nav-sort{
     ul{
         display:none;
     }
   }
-  select{
-    margin: 2rem;
-    height: 40px;
-    width: 225px;
 
+  select {
+    font-family: $headingFont;
+    text-transform: uppercase;
+    background: $dark;
+    border: 1px solid $light;
+    border-radius: 0;
+    color: $light;
+    width: 10rem;
+    padding: .5rem 1rem;
+    margin: 2rem auto;
+    outline: none;
+    appearance: none;
+    background-image: url('/images/down-arrow.png');
+    background-size: .7rem;
+    background-repeat: no-repeat;
+    background-position: 90% 50%
+  }
 
+  option {
+    border: 1px solid $light;
+    padding: .5rem 0;
   }
 }
 
@@ -19,21 +38,24 @@ select{
 }
 .nav-sort {
     ul {
+      max-width: $tablet;
       display: flex;
       flex-wrap: nowrap;
       list-style: none;
-      justify-content: space-around;
-      margin: 2rem 0;
+      justify-content: space-evenly;
+      padding: 0;
+      margin: 2rem auto;
+      
 
       li:last-child a {
         border: none;
       }
 
       li a {
+        font-family: $headingFont;
         text-decoration: none;
-        color: white;
-        border-right: 1px white solid;
-        padding-right: 4rem;
+        text-transform: uppercase;
+        color: $light;
 
         &:active,
         &.active {

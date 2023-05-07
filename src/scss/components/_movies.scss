@@ -3,16 +3,20 @@
 
 .movie-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  max-width: 1020px;
-  grid-gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: $laptop;
+  gap: 2rem;
   margin: .5rem auto;
-  justify-content: center;
+}
+
+.movie {
+  max-width: 300px;
+  margin: 0 auto;
+
 }
 
 .movie-card {
   position: relative;
-  max-width: 300px;
 
   .movie-poster {
     display: block;
@@ -71,6 +75,7 @@
 .more-info-button {
   margin: 1.5rem 0;
   a {
+    font-family: $headingFont;
     font-size: .8rem;
     font-family: $headingFont;
     text-transform: uppercase;
@@ -79,6 +84,13 @@
     border: solid 1px $light;
     border-radius: 20px;
     padding: .35rem 2rem;
+
+    &:hover {
+      color: $dark;
+      border: solid 1px $dark;
+      background-color: $light;
+      font-weight: 600;
+    }
   }
 }
 
