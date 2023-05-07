@@ -27,10 +27,6 @@ function PageHome({sort = 'popular'}) {
         let data = await response.json();
 
         data = data.results.splice(0, 12);
-
-        // console.log(response);
-        // console.log(data);
-        //`${baseUrl}/movie/${sort}?api_key=${apiKey}&page=${page}`
    
       setMovies(data);
     };

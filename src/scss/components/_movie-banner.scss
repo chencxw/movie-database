@@ -60,3 +60,14 @@
     }
   }
 }
+
+.banner-btns {
+  @include mq($tablet){
+    display: flex;
+    gap: 4rem;
+    .btn-favourite, .more-info-button {
+      margin: 1rem 0rem;
+    }
+  }
+
+}
