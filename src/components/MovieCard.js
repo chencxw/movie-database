@@ -1,7 +1,7 @@
-import { Link, useParams } from 'react-router-dom';
+// import { Link, useParams } from 'react-router-dom';
 import MoreInfoButton from './MoreInfoButton';
 import FavButton from './FavButton';
-import { starSVG, calendarSVG } from "../globals/globals";
+import { starSVG } from "../globals/globals";
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
@@ -21,16 +21,15 @@ function MovieCard({movies}) {
 
   const favs = useSelector((state) => state.favs.items);
 
-  const {id} = useParams();
+  // const {id} = useParams();
 
   return (
     <div className="movie-container">
         {movies.map(movies => (
           <article className="movie" key={movies.id} >
-            <Link to={`/movie/${movies.id}`} className="movie-card">
+            <div className="movie-card">
               <div className="movie-poster">
-                  <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={`${movies.title} Poster`} />
-                
+                <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={`${movies.title} Poster`} />               
               </div>
               <div className="movie-card-overlay">
                 <p className="movie-rate">{starSVG} {movies.vote_average}</p>
@@ -43,7 +42,7 @@ function MovieCard({movies}) {
                 </div>
                 <MoreInfoButton movies={movies}/>
               </div>
-            </Link>
+            </div>
             <div className="movie-info">
               <p>{movies.release_date}</p>
               <h3>{movies.title}</h3>
