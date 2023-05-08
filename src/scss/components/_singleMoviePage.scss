@@ -31,14 +31,15 @@
     gap: 1.5rem;
 }
 
-.btn-favourite {
-    margin: 2rem 0rem 3rem;
-}
 
 .trailer {
     border: 0;
     aspect-ratio: 16 / 9;
     width: 100%;
+}
+
+.individual-movie .btn-favourite {
+    margin: 2rem 0rem 3rem;
 }
 
 @include  mq(50em) {
