@@ -46,10 +46,9 @@ select{
       padding: 0;
       margin: 2rem auto;
       
-
-      li:last-child a {
-        border: none;
-      }
+      // li:last-child a {
+      //   border: none;
+      // }
 
       li a {
         font-family: $headingFont;
@@ -57,9 +56,12 @@ select{
         text-transform: uppercase;
         color: $light;
 
+        &:hover,
         &:active,
         &.active {
-          text-decoration: underline;
+          // text-decoration: underline;
+          border-bottom: 1px solid $light;
+          padding-bottom: .2rem;
         }
       }
     }
