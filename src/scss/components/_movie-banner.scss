@@ -11,9 +11,13 @@
   img {
     object-fit: cover;
     min-height: 20rem;
-    mask-image: linear-gradient(180deg, rgba(40, 40, 40, 0.97) 45%, hsla(0, 0%, 100%, 0) 95%);
+    // background: linear-gradient(180deg, rgba(40, 40, 40, 0.97) 45%, hsla(0, 0%, 100%, 0) 95%);
     height: 100%;
   }
+}
+
+.bottom-gradient {
+  @include bottom-gradient;
 }
 
 .banner-info-container {
