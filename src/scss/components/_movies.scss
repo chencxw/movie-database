@@ -81,7 +81,11 @@
   span {
     margin-left: .5rem;
   }
+  &:hover {
+    cursor: pointer;
+  }
 }
+
 
 .more-info-button {
   margin: 1.5rem 0;

@@ -21,14 +21,16 @@
     .movie-overview{
         font-family: $bodyFont;
     }
-    p svg {
-        vertical-align: middle;
-    }
 }
 
 .movie-specs {
     display: flex;
     gap: 1.5rem;
+    font-size: 0.9rem;
+    svg {
+        vertical-align: middle;
+        width: 20px;
+    }
 }
 
 
@@ -40,6 +42,15 @@
 
 .individual-movie .btn-favourite {
     margin: 2rem 0rem 3rem;
+}
+
+@include mq(25em) {
+    .movie-specs {
+        font-size: 1rem;
+        svg {
+            width: 24px;
+        }
+    }
 }
 
 @include  mq(50em) {
@@ -63,12 +74,12 @@
         }
     }
 
-    .bottom-gradient {
+    .bottom-gradient-single {
         @include bottom-gradient;
       }
 
     .single-movie-info {
-        max-width: 40vw;
+        max-width: 42vw;
         position: relative;
         z-index: 3;
         h1 {
