@@ -1,0 +1,33 @@
+@use '../base/variables' as *;
+@use '../utilities/mixins' as *;
+
+.page-not-found {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0rem 1.5rem ;
+  max-width: 1200px;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  a {
+    color: $light;
+    text-decoration: none;
+    border-bottom: dotted;
+  }
+
+  @include mq($tablet){
+    margin: 0 7rem; 
+  }
+
+  @include mq($desktop){
+    margin: 0 15rem; 
+  }
+}
