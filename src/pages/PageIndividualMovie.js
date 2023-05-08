@@ -14,6 +14,14 @@ function PageIndividualMovie() {
 
   useEffect(() => {
 
+    // window.scrollTo(0, 0);
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+
     const fetchMovie = async () => {
       const response = await fetch(`${baseUrl}/movie/${id}?language=en-US`, {  
         headers: {

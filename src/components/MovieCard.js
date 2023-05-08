@@ -29,7 +29,7 @@ function MovieCard({movies}) {
           <article className="movie" key={movies.id} >
             <div className="movie-card">
               <div className="movie-poster">
-                <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={`${movies.title} Poster`} />               
+                <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={`${movies.title} Poster`} />               
               </div>
               <div className="movie-card-overlay">
                 <p className="movie-rate">{starSVG} {movies.vote_average}</p>
