@@ -18,7 +18,8 @@
 
 .bottom-gradient {
   @include bottom-gradient;
-  background: linear-gradient(0deg, rgb(40, 40, 40) 1%, transparent 80%);
+  height: 85%;
+  background: linear-gradient(0deg, rgb(40, 40, 40) 1%, transparent 90%);
 }
 
 .banner-info-container {
