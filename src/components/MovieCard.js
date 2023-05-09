@@ -5,6 +5,7 @@ import { starSVG } from "../globals/globals";
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
+import noPoster from '../images/no-movie-poster.png';
 
 
 function MovieCard({movies}) {
@@ -29,7 +30,10 @@ function MovieCard({movies}) {
           <article className="movie" key={movies.id} >
             <div className="movie-card">
               <div className="movie-poster">
-                <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={`${movies.title} Poster`} />               
+                {movies.poster_path === null ?
+                  <img src={noPoster} alt="No poster available." /> :
+                  <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={`${movies.title} Poster`} />
+                }                
               </div>
               <div className="movie-card-overlay">
                 <p className="movie-rate">{starSVG} {movies.vote_average}</p>
