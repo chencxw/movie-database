@@ -20,7 +20,8 @@
   a {
     color: $light;
     text-decoration: none;
-    border-bottom: dotted;
+    border-bottom: dashed $light;
+    padding-bottom: .2rem;
   }
 
   @include mq($tablet){
