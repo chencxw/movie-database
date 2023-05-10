@@ -45,9 +45,10 @@
     opacity: 0;
     transition: opacity .5s ease-in-out;
 
-    &:hover {
-      opacity: 1;
-    }
+  }
+
+  .show-overlay {
+    opacity: 1;
   }
 
   .movie-overview {
@@ -118,5 +119,11 @@
     p {
       margin: .7rem 0 .3rem;
     }
+  }
+}
+
+@include mq($laptop) {
+  .movie-card-overlay:hover {
+    opacity: 1;
   }
 }

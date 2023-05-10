@@ -6,11 +6,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
 import noPoster from '../images/no-movie-poster.png';
+import {useState, useEffect } from "react";
 
 
 function MovieCard({movies}) {
   
   const dispatch = useDispatch();
+  const [isSelected, setIsSelected] = useState(null);
+  const [isClicked, setIsClicked] = useState(false);
+  const [matches, setMatches] = useState(false);
+  const query = "(max-width: 800px)";
+
+  const handleMediaChange = (e) => {
+    setMatches(e.matches);
+  }
+
+  function handleIsClicked(id)  {
+    setIsSelected(id);
+    setIsClicked(current => !current);
+  }
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+    setMatches(mediaQueryList.matches);
+    mediaQueryList.addEventListener("change", handleMediaChange);
+    return () => {
+      mediaQueryList.removeEventListener("change", handleMediaChange)
+    }
+  }, [query])
 
   function handleFavClick( addToFav, obj) {
     if( addToFav === true ) {
@@ -24,6 +47,8 @@ function MovieCard({movies}) {
 
   // const {id} = useParams();
 
+  // <div className="movie-card-overlay" >
+
   return (
     <div className="movie-container">
         {movies.map(movies => (
@@ -35,7 +60,10 @@ function MovieCard({movies}) {
                   <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={`${movies.title} Poster`} />
                 }                
               </div>
-              <div className="movie-card-overlay">
+              <div  className={(movies.id === isSelected && isClicked) ? 
+                              'movie-card-overlay show-overlay' : 
+                              'movie-card-overlay'} 
+                    onClick={matches ?() => handleIsClicked(movies.id) : null} >
                 <p className="movie-rate">{starSVG} {movies.vote_average}</p>
                 <p className="movie-overview">{movies.overview}</p>
                 <div className="btn-favourite">
