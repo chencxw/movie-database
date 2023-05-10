@@ -10,11 +10,13 @@
     font-size: 2rem;
     font-weight: normal;
   }
-  a {
-    color: #fff;
-  }
-  a:hover {
-    color: #727272;
+  .no-favourites {
+    a {
+      color: $light;
+      text-decoration: none;
+      border-bottom: dashed $light;
+      padding-bottom: .2rem;
+    }
   }
   #favs-grid {
     .movie-container {
