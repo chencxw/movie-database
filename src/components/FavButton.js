@@ -1,11 +1,11 @@
 function FavButton({ movies, remove, handleFavClick }) {
   function handleAddFav(event) {
-    // event.stopPropagation();
+    event.stopPropagation();
     handleFavClick(true, movies);
   }
 
   function handleRemoveFav(event) {
-    // event.stopPropagation();
+    event.stopPropagation();
     handleFavClick(false, movies);
   }
 
