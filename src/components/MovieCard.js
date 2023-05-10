@@ -15,7 +15,7 @@ function MovieCard({movies}) {
   const [isSelected, setIsSelected] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
   const [matches, setMatches] = useState(false);
-  const query = "(max-width: 800px)";
+  const query = "(max-width: 1024px)";
 
   const handleMediaChange = (e) => {
     setMatches(e.matches);
@@ -53,17 +53,16 @@ function MovieCard({movies}) {
     <div className="movie-container">
         {movies.map(movies => (
           <article className="movie" key={movies.id} >
-            <div className="movie-card">
+            <div className="movie-card" onClick={matches ? () => handleIsClicked(movies.id) : null}>
               <div className="movie-poster">
                 {movies.poster_path === null ?
                   <img src={noPoster} alt="No poster available." /> :
                   <img src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={`${movies.title} Poster`} />
                 }                
               </div>
-              <div  className={(movies.id === isSelected && isClicked) ? 
+              <div className={(movies.id === isSelected && isClicked) ? 
                               'movie-card-overlay show-overlay' : 
-                              'movie-card-overlay'} 
-                    onClick={matches ?() => handleIsClicked(movies.id) : null} >
+                              'movie-card-overlay'} >
                 <p className="movie-rate">{starSVG} {movies.vote_average}</p>
                 <p className="movie-overview">{movies.overview}</p>
                 <div className="btn-favourite">
