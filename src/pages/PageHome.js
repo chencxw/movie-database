@@ -29,7 +29,7 @@ function PageHome({ sort = "popular" }) {
         }
       );
       let data = await response.json();
-      setMovies(data.results);
+      setMovies(data.results.slice(0, 12));
       setTotalPages(Math.min(50, data.total_pages));
       console.log(data);
     };
