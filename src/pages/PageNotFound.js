@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { appTitile } from '../globals/globals';
 import { Link } from 'react-router-dom';
 
 

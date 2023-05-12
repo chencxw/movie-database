@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import SearchButton from './SearchButton';
 
 function NavMenu({showHideNav}) {
 
@@ -11,13 +12,16 @@ function NavMenu({showHideNav}) {
   }
 
   return (
-    <nav className="nav-dropdown" onClick={closeNavMenu} >
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/favourites">Favourites</NavLink></li>
-      </ul>
-    </nav>
+    <>
+      <nav className="nav-dropdown" onClick={closeNavMenu} >
+        <ul>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/favourites">Favourites</NavLink></li>
+        </ul>
+      </nav>
+      <SearchButton />
+    </>
   )
 }
 

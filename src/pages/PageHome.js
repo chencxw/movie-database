@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
+import { appTitle, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
 import FilterButtons from "../components/FilterButtons";
@@ -14,7 +14,14 @@ function PageHome({ sort = "popular" }) {
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+
     document.title = `${appTitle}`;
+
   }, []);
 
   useEffect(() => {
@@ -32,11 +39,19 @@ function PageHome({ sort = "popular" }) {
       let data = await response.json();
       setMovies(data.results);
       setTotalPages(data.total_pages);
-      console.log(data);
     };
 
     fetchMovies();
   }, [sort, currentPage]);
+
+
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 1080,
+  //     left: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, [currentPage])
 
   const handlePageChange = (event, newPage) => {
     setCurrentPage(newPage);
