@@ -3,7 +3,6 @@ import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
 import FilterButtons from "../components/FilterButtons";
-import FilterTest from "../components/FilterTest";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
@@ -53,7 +52,6 @@ function PageHome({ sort = "popular" }) {
       </header>
 
       <section>
-        <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />
         <Stack spacing={2}>
