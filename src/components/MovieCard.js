@@ -31,9 +31,15 @@ function MovieCard({movies}) {
     setMatches(mediaQueryList.matches);
     mediaQueryList.addEventListener("change", handleMediaChange);
     return () => {
-      mediaQueryList.removeEventListener("change", handleMediaChange)
+      mediaQueryList.removeEventListener("change", handleMediaChange);
     }
   }, [query])
+
+  useEffect(() => {
+    if(window.innerWidth > 1024) {
+      setIsClicked(false);
+    }
+  }, [matches])
 
   function handleFavClick( addToFav, obj) {
     if( addToFav === true ) {
@@ -44,10 +50,6 @@ function MovieCard({movies}) {
   }
 
   const favs = useSelector((state) => state.favs.items);
-
-  // const {id} = useParams();
-
-  // <div className="movie-card-overlay" >
 
   return (
     <div className="movie-container">

@@ -26,6 +26,7 @@
 
 .movie-card {
   position: relative;
+  cursor: pointer;
 
   .movie-poster {
     display: block;
@@ -120,6 +121,9 @@
 }
 
 @include mq($laptop) {
+  .movie-card {
+    cursor: default;
+  }
   .movie-card-overlay {
     visibility: visible;
     opacity: 0;
