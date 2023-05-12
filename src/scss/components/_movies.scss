@@ -1,6 +1,7 @@
 @use "../base/variables" as *;
 @use "../utilities/mixins" as *;
 
+
 .movie-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -136,6 +137,8 @@
 .MuiPagination-ul {
   justify-content: center;
 }
+
+
 
 .MuiSvgIcon-root,
 .MuiButtonBase-root,

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { appTitle, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
@@ -12,13 +12,16 @@ function PageHome({ sort = "popular" }) {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [height, setHeight] = useState(0)
+  const ref = useRef(0)
+  const firstRenderRef = useRef(true);
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   left: 0,
+    //   behavior: "smooth",
+    // });
 
     document.title = `${appTitle}`;
 
@@ -40,6 +43,13 @@ function PageHome({ sort = "popular" }) {
       setMovies(data.results);
       setTotalPages(Math.min(50, data.total_pages));
       console.log(data);
+        if (currentPage !== 1) {
+          window.scrollTo({
+            top: ref.current.clientHeight,
+            left: 0,
+            behavior: "smooth",
+          });
+        }
     };
 
     fetchMovies();
@@ -47,15 +57,18 @@ function PageHome({ sort = "popular" }) {
 
 
   // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 1080,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  // }, [currentPage])
+  //   // setHeight(ref.current.clientHeight);
+  //     // if it is not the first render, we scroll to below the header
+  //     if (!firstRenderRef.current) {
+       
+  //     }
+  //   // set firstRender.current to false
+  //   firstRenderRef.current = false;
+  // }, [movies]);
 
   const handlePageChange = (event, newPage) => {
     setCurrentPage(newPage);
+
   };
 
   if (movies.length === 0) {
@@ -64,7 +77,7 @@ function PageHome({ sort = "popular" }) {
 
   return (
     <main>
-      <header>
+      <header ref={ref}>
         <MovieBanner movies={movies} />
       </header>
 
