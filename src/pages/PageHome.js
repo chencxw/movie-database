@@ -31,7 +31,7 @@ function PageHome({ sort = "popular" }) {
       );
       let data = await response.json();
       setMovies(data.results);
-      setTotalPages(data.total_pages);
+      setTotalPages(Math.min(50, data.total_pages));
       console.log(data);
     };
 
