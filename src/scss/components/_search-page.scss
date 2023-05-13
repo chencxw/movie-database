@@ -1,0 +1,7 @@
+@use "../base/variables" as *;
+@use "../utilities/mixins" as *;
+
+.search-page {
+    margin-top: 8rem;
+    min-height: 80vh;
+}
