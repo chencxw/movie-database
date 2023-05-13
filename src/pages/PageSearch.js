@@ -27,8 +27,8 @@ function PageSearch() {
     }, []);
 
   return (
-    <section class="search-page">
-        <div class="search-title">
+    <section className="search-page">
+        <div className="search-title">
             <h2>Search results for...</h2>
             <h3>"{userInput}"</h3>
         </div>

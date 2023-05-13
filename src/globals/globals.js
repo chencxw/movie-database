@@ -11,6 +11,8 @@ export const calendarSVG = <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" w
 
 export const clockSVG = <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width='24' height="100%" viewBox="0 0 30 30"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 12v-6h-2v8h7v-2h-5z"/></svg>
 
+export const searchSVG = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 24 24"><path d="M23.809 21.646l-6.205-6.205c1.167-1.605 1.857-3.579 1.857-5.711 0-5.365-4.365-9.73-9.731-9.73-5.365 0-9.73 4.365-9.73 9.73 0 5.366 4.365 9.73 9.73 9.73 2.034 0 3.923-.627 5.487-1.698l6.238 6.238 2.354-2.354zm-20.955-11.916c0-3.792 3.085-6.877 6.877-6.877s6.877 3.085 6.877 6.877-3.085 6.877-6.877 6.877c-3.793 0-6.877-3.085-6.877-6.877z"/></svg>
+
 
 // https://api.themoviedb.org/3/movie/550?api_key=1e55f4bc336e25a4e8d5e6a0873de6c6
 
