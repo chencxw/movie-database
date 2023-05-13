@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
@@ -18,6 +18,7 @@ function PageHome({ sort = "popular" }) {
   }, []);
 
   useEffect(() => {
+
     const fetchMovies = async () => {
       const response = await fetch(
         `${baseUrl}/movie/${sort}?language=en-US&page=${currentPage}`,
@@ -39,8 +40,13 @@ function PageHome({ sort = "popular" }) {
   }, [sort, currentPage]);
 
   const handlePageChange = (event, newPage) => {
+    // document.querySelector("#anchor")?.scrollIntoView({ behavior: "smooth" })
     setCurrentPage(newPage);
   };
+
+  useLayoutEffect(() => {
+    document.querySelector("#anchor")?.scrollIntoView({ behavior: "smooth" })
+  }, [currentPage])
 
   if (movies.length === 0) {
     return <div className="loadingMovies">Loading movies...</div>;
@@ -53,6 +59,7 @@ function PageHome({ sort = "popular" }) {
       </header>
 
       <section>
+        <span id="anchor" />
         <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />
