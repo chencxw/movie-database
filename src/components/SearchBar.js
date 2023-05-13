@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { searchSVG } from '../globals/globals';
 import {useState} from 'react'
 
-function SearchBar() {
+function SearchBar({closeNavMenu}) {
 
   let navigate = useNavigate();
 
@@ -23,7 +23,7 @@ function SearchBar() {
                 name="search"
                 id="search"
                 placeholder="Search..." />
-        <button type="submit" value="Submit" className='search-btn'>{searchSVG}</button>
+        <button type="submit" value="Submit" className='search-btn' onClick={closeNavMenu} >{searchSVG}</button>
       </form>
     </div>
     
