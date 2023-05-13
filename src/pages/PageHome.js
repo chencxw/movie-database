@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import { appTitle, API_TOKEN } from "../globals/globals";
+import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
 import FilterButtons from "../components/FilterButtons";
+import FilterTest from "../components/FilterDropDown";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
@@ -19,6 +20,7 @@ function PageHome({ sort = "popular" }) {
   }, []);
 
   useEffect(() => {
+
     const fetchMovies = async () => {
       const response = await fetch(
         `${baseUrl}/movie/${sort}?language=en-US&page=${currentPage}`,
@@ -50,6 +52,7 @@ function PageHome({ sort = "popular" }) {
 
   };
 
+
   if (movies.length === 0) {
     return <div className="loadingMovies">Loading movies...</div>;
   }
@@ -61,6 +64,7 @@ function PageHome({ sort = "popular" }) {
       </header>
 
       <section  ref={ref}>
+        <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />
         <Stack spacing={2}>
