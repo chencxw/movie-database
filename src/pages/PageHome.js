@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
@@ -12,6 +12,8 @@ function PageHome({ sort = "popular" }) {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const ref = useRef(null);
+  const firstRenderRef = useRef(true);
 
   useEffect(() => {
     document.title = `${appTitle}`;
@@ -33,20 +35,23 @@ function PageHome({ sort = "popular" }) {
       let data = await response.json();
       setMovies(data.results.slice(0, 12));
       setTotalPages(Math.min(50, data.total_pages));
-      console.log(data);
     };
 
     fetchMovies();
   }, [sort, currentPage]);
 
+  useEffect(() => {
+    if ( ref.current && !firstRenderRef.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+    firstRenderRef.current = false;
+  }, [currentPage]);
+
   const handlePageChange = (event, newPage) => {
-    // document.querySelector("#anchor")?.scrollIntoView({ behavior: "smooth" })
     setCurrentPage(newPage);
+
   };
 
-  useLayoutEffect(() => {
-    document.querySelector("#anchor")?.scrollIntoView({ behavior: "smooth" })
-  }, [currentPage])
 
   if (movies.length === 0) {
     return <div className="loadingMovies">Loading movies...</div>;
@@ -58,8 +63,7 @@ function PageHome({ sort = "popular" }) {
         <MovieBanner movies={movies} />
       </header>
 
-      <section>
-        <span id="anchor" />
+      <section  ref={ref}>
         <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />

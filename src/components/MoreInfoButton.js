@@ -1,8 +1,6 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function MoreInfoButton({movies}) {
-
-  const {id} = useParams();
 
   return (
     <div className="more-info-button">

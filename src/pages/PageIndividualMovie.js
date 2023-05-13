@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-import { appTitle, API_TOKEN  } from '../globals/globals';
+import { API_TOKEN  } from '../globals/globals';
 import SingleMovie from '../components/SingleMovie';
 
 
