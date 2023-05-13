@@ -18,7 +18,6 @@ function NavMenu({showHideNav}) {
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/about">About</NavLink></li>
           <li><NavLink to="/favourites">Favourites</NavLink></li>
-          <SearchBar />
         </ul>
       </nav>
     </>

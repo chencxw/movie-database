@@ -37,7 +37,7 @@ function Header() {
         </span>
         <span className="sr-only">Menu</span>
       </button>
-      {/* <SearchBar /> */}
+      <SearchBar />
       <NavMenu showHideNav={showHideNav} />
     </header>
   )
