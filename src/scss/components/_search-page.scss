@@ -1,6 +1,38 @@
 @use "../base/variables" as *;
 @use "../utilities/mixins" as *;
 
+.search-bar {
+    input {
+        font-family: $headingFont;
+        color: $light;
+        border: 1px solid $light;
+        background-color: transparent;
+        padding: 0.25rem 0.5rem;
+        &:-webkit-autofill,
+        &:-webkit-autofill:active,
+        &:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px $dark inset;
+            -webkit-text-fill-color: $light;
+        }
+    }
+}
+
+::placeholder {
+    color: #b1b1b1;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    svg {
+        fill: $light;
+        background-color: transparent;
+        vertical-align: middle;
+    }
+
+}
+
 .search-page {
     margin-top: 8rem;
     min-height: 80vh;
@@ -15,6 +47,8 @@
     padding: 0 5vw;
 }
 
-@include  mq(100em) {
-
-}
+// @include mq(50em) {
+//     .search-bar {
+//         display: inline;
+//     }
+// }

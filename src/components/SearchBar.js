@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { searchSVG } from '../globals/globals';
+import {useState} from 'react'
 
 function SearchBar() {
 
@@ -21,7 +23,7 @@ function SearchBar() {
                 name="search"
                 id="search"
                 placeholder="Search..." />
-        <input type="submit" value="Submit" />
+        <button type="submit" value="Submit" className='search-btn'>{searchSVG}</button>
       </form>
     </div>
     
