@@ -2,6 +2,8 @@
 @use "../utilities/mixins" as *;
 
 .search-bar {
+    margin-left: 2.5rem;
+    height: fit-content;
     input {
         font-family: $headingFont;
         color: $light;
@@ -47,8 +49,8 @@
     padding: 0 5vw;
 }
 
-// @include mq(50em) {
-//     .search-bar {
-//         display: inline;
-//     }
-// }
+@include mq(50em) {
+    .search-bar {
+        margin-left: 2rem;
+    }
+}
