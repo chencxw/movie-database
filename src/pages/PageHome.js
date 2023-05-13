@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
@@ -41,13 +41,16 @@ function PageHome({ sort = "popular" }) {
   }, [sort, currentPage]);
 
   useEffect(() => {
-    if ( ref.current && !firstRenderRef.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-    firstRenderRef.current = false;
+    // if ( ref.current && !firstRenderRef.current) {
+    //   ref.current.scrollIntoView({ behavior: "smooth" });
+    // }
+    // firstRenderRef.current = false;
   }, [currentPage]);
 
+
+
   const handlePageChange = (event, newPage) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
     setCurrentPage(newPage);
 
   };
