@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
@@ -13,7 +13,6 @@ function PageHome({ sort = "popular" }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const ref = useRef(null);
-  const firstRenderRef = useRef(true);
 
   useEffect(() => {
     document.title = `${appTitle}`;
