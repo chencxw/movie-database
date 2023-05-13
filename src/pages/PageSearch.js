@@ -28,6 +28,10 @@ function PageSearch() {
 
   return (
     <section class="search-page">
+        <div class="search-title">
+            <h2>Search results for...</h2>
+            <h3>"{userInput}"</h3>
+        </div>
         {results ? <MovieCard movies={results.results} /> : <div className='loadingMovies'><p>Loading...</p></div>}
     </section>
   )
