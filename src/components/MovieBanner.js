@@ -18,26 +18,36 @@ function MovieBanner({movies}) {
 
   const favs = useSelector((state) => state.favs.items);
 
+  function bannerIsSet(movies, length) {
+    for ( let i=0; i < length; i++ ) {
+      if (movies[i].backdrop_path) {
+          // const movieSource = `https://image.tmdb.org/t/p/original/${movies[i].backdrop_path}`;
+          return movies[i];
+      }
+    }
+  }
+
 
 
   return (
     <div className='banner-container'>
       <picture>
-        <source media="(max-width: 400px)" srcSet={`https://image.tmdb.org/t/p/w780/${movies[0].backdrop_path}`}/>
-        <source media="(max-width: 720px)" srcSet={`https://image.tmdb.org/t/p/w1280/${movies[0].backdrop_path}`}/>
-        <img src={`https://image.tmdb.org/t/p/original/${movies[0].backdrop_path}`} alt={`${movies[0].title} Poster`} />
+        <source media="(max-width: 400px)" srcSet={`https://image.tmdb.org/t/p/w780/${bannerIsSet(movies, movies.length).backdrop_path}`}/>
+        <source media="(max-width: 720px)" srcSet={`https://image.tmdb.org/t/p/w1280/${bannerIsSet(movies, movies.length).backdrop_path}`}/>
+        {/* <img src={`https://image.tmdb.org/t/p/original/${movies[0].backdrop_path}`} alt={`${movies[0].title} Poster`} /> */}
+        <img src={`https://image.tmdb.org/t/p/original/${bannerIsSet(movies, movies.length).backdrop_path}`} alt={`${bannerIsSet(movies, movies.length).title} Poster`} />
         <div className="bottom-gradient"></div>
       </picture>
       <div className="banner-info-container">
-        <h1>{movies[0].title}</h1>
+        <h1>{bannerIsSet(movies, movies.length).title}</h1>
         <div className="banner-btns">
           <div className="btn-favourite">
-            {isFav(favs, null, movies[0].id) ?
-              <FavButton movies={movies[0]} remove={true} handleFavClick={handleFavClick} /> :
-              <FavButton movies={movies[0]} handleFavClick={handleFavClick} />
+            {isFav(favs, null, bannerIsSet(movies, movies.length).id) ?
+              <FavButton movies={bannerIsSet(movies, movies.length)} remove={true} handleFavClick={handleFavClick} /> :
+              <FavButton movies={bannerIsSet(movies, movies.length)} handleFavClick={handleFavClick} />
             }
           </div>
-          <MoreInfoButton movies={movies[0]}/>
+          <MoreInfoButton movies={bannerIsSet(movies, movies.length)}/>
         </div>
       </div>
     </div>
