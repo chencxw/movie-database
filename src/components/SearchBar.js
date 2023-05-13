@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 
-function SearchBar({ query, onInputChange }) {
+function SearchBar() {
 
   let navigate = useNavigate();
 
   function handleSubmit(e) {
-    debugger;
     e.preventDefault();
 
     let q = e.target.elements.search.value;
@@ -22,6 +21,7 @@ function SearchBar({ query, onInputChange }) {
                 name="search"
                 id="search"
                 placeholder="Search..." />
+        <input type="submit" value="Submit" />
       </form>
     </div>
     

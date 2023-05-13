@@ -39,12 +39,12 @@ function PageHome({ sort = "popular" }) {
     fetchMovies();
   }, [sort, currentPage]);
 
-  useEffect(() => {
-    // if ( ref.current && !firstRenderRef.current) {
-    //   ref.current.scrollIntoView({ behavior: "smooth" });
-    // }
-    // firstRenderRef.current = false;
-  }, [currentPage]);
+  // useEffect(() => {
+  //   // if ( ref.current && !firstRenderRef.current) {
+  //   //   ref.current.scrollIntoView({ behavior: "smooth" });
+  //   // }
+  //   // firstRenderRef.current = false;
+  // }, [currentPage]);
 
 
 
@@ -65,7 +65,7 @@ function PageHome({ sort = "popular" }) {
         <MovieBanner movies={movies} />
       </header>
 
-      <section  ref={ref}>
+      <section ref={ref}>
         <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />

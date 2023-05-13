@@ -11,6 +11,7 @@ import PageAbout from '../pages/PageAbout';
 import PageFavourite from '../pages/PageFavourite';
 import PageIndividualMovie from '../pages/PageIndividualMovie';
 import PageNotFound from '../pages/PageNotFound';
+import PageSearch from '../pages/PageSearch';
 
 function AppRouter() {
   return (
@@ -21,6 +22,7 @@ function AppRouter() {
                 <Route path="/" exact element={<PageHome/>}  />
                 <Route path="/about" element={<PageAbout />} />
                 <Route path="/favourites" element={<PageFavourite />} />
+                <Route path="/search/:userInput" element={<PageSearch />} />
                 <Route path="/movie/:id" element={<PageIndividualMovie/>} />
                 <Route path="/sort/popular" element={<PageHome sort="popular" />}  />
                 <Route path="/sort/top-rated" element={<PageHome sort="top_rated" />}  />
