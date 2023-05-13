@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import SearchButton from './SearchButton';
 
 function NavMenu({showHideNav}) {
 
@@ -20,7 +19,6 @@ function NavMenu({showHideNav}) {
           <li><NavLink to="/favourites">Favourites</NavLink></li>
         </ul>
       </nav>
-      <SearchButton />
     </>
   )
 }

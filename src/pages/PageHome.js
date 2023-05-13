@@ -12,19 +12,11 @@ function PageHome({ sort = "popular" }) {
   const [movies, setMovies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [height, setHeight] = useState(0)
-  const ref = useRef(0)
+  const ref = useRef(0);
   const firstRenderRef = useRef(true);
 
   useEffect(() => {
-    // window.scrollTo({
-    //   top: 0,
-    //   left: 0,
-    //   behavior: "smooth",
-    // });
-
     document.title = `${appTitle}`;
-
   }, []);
 
   useEffect(() => {
@@ -43,28 +35,31 @@ function PageHome({ sort = "popular" }) {
       setMovies(data.results);
       setTotalPages(Math.min(50, data.total_pages));
       console.log(data);
-        if (currentPage !== 1) {
-          window.scrollTo({
-            top: ref.current.clientHeight,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
+        // if (currentPage !== 1) {
+        //   window.scrollTo({
+        //     top: ref.current.clientHeight,
+        //     left: 0,
+        //     behavior: "smooth",
+        //   });
+        // }
     };
 
     fetchMovies();
   }, [sort, currentPage]);
 
 
-  // useEffect(() => {
-  //   // setHeight(ref.current.clientHeight);
-  //     // if it is not the first render, we scroll to below the header
-  //     if (!firstRenderRef.current) {
-       
-  //     }
-  //   // set firstRender.current to false
-  //   firstRenderRef.current = false;
-  // }, [movies]);
+  useEffect(() => {
+      // if it is not the first render, we scroll to below the header
+      if (!firstRenderRef.current) {
+          window.scrollTo({
+            top: ref.current.clientHeight,
+            left: 0,
+            behavior: "smooth",
+          });
+      }
+    // set firstRender.current to false
+    firstRenderRef.current = false;
+  }, [currentPage]);
 
   const handlePageChange = (event, newPage) => {
     setCurrentPage(newPage);
