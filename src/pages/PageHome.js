@@ -3,7 +3,6 @@ import { appTitle, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
 import FilterButtons from "../components/FilterButtons";
-import FilterTest from "../components/FilterTest";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
@@ -32,7 +31,7 @@ function PageHome({ sort = "popular" }) {
         }
       );
       let data = await response.json();
-      setMovies(data.results);
+      setMovies(data.results.slice(0, 12));
       setTotalPages(Math.min(50, data.total_pages));
       console.log(data);
         // if (currentPage !== 1) {
@@ -77,7 +76,6 @@ function PageHome({ sort = "popular" }) {
       </header>
 
       <section>
-        <FilterTest />
         <FilterButtons />
         <MovieCard movies={movies} />
         <Stack spacing={2}>
