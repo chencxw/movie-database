@@ -11,8 +11,9 @@
   img {
     object-fit: cover;
     min-height: 20rem;
-    // background: linear-gradient(180deg, rgba(40, 40, 40, 0.97) 45%, hsla(0, 0%, 100%, 0) 95%);
     height: 100%;
+    margin: 0 auto;
+    display: block;
   }
 }
 
