@@ -8,7 +8,7 @@ function PageFavourite() {
   const favs = useSelector((state) => state.favs.items);
 
   useEffect(() => {
-    document.title = `${appTitle} - Favourites`;
+    document.title = `${appTitle} | Favourites`;
   }, []);
 
   return (
