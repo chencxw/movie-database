@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom';
-import { API_TOKEN  } from '../globals/globals';
+import { appTitle, API_TOKEN  } from '../globals/globals';
 import { useState, useEffect } from 'react';
 import MovieCard from "../components/MovieCard";
 
@@ -24,16 +24,25 @@ function PageSearch() {
           }
         
         fetchResults();
+    }, [userInput]);
+
+    useEffect(() => {
+      document.title = `${appTitle} | Search`;
     }, []);
 
   return (
+
+
     <section className="search-page">
         <div className="search-title">
             <h2>Search results for...</h2>
             <h3>"{userInput}"</h3>
         </div>
-        {results ? <MovieCard movies={results.results} /> : <div className='loadingMovies'><p>Loading...</p></div>}
+        {/* {results ? <MovieCard movies={results.results} /> : <div className='loadingMovies'><p>Loading...</p></div>} */}
+        {results ? (results.results.length > 0 ? <MovieCard movies={results.results} /> : <div className='no-result'><p>No Movies Found.</p></div>) : <div className='loadingMovies'><p>Loading...</p></div>}
+        
     </section>
+    
   )
 }
 export default PageSearch

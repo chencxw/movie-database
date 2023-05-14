@@ -31,6 +31,7 @@
         fill: $light;
         background-color: transparent;
         vertical-align: middle;
+        margin-left: .2rem;
     }
 
 }
@@ -40,13 +41,18 @@
     min-height: 80vh;
 }
 
-.search-title {
+.search-title,
+.no-result {
     h3 {
         margin-bottom: 3rem;
     }
     max-width: $desktop;
     margin: 0.5rem auto;
     padding: 0 5vw;
+}
+
+.no-result {
+    
 }
 
 @include mq(50em) {
