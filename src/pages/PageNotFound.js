@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from "react";
+import { appTitle } from "../globals/globals";
 
 
 function PageNotFound() {
 
-//   useEffect(() => {
-//     document.title = `${appTitle} | Page Not Found`;
-//   }, []);
+  useEffect(() => {
+    document.title = `${appTitle} | Page Not Found`;
+  }, []);
 
     return(
       <main>
