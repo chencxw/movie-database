@@ -3,6 +3,7 @@ import isFav from '../utilities/isFav';
 import FavButton from './FavButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
+import noBanner from '../images/no-banner.jpg';
 
 function MovieBanner({movies}) {
 
@@ -25,6 +26,9 @@ function MovieBanner({movies}) {
           return movies[i];
       }
     }
+    return (
+      <img src={noBanner} alt="No banner available." />
+    );
   }
 
 
