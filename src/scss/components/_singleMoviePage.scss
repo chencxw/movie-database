@@ -44,6 +44,10 @@
     margin: 2rem 0rem 3rem;
 }
 
+.no-backdrop {
+    height: 6rem;
+}
+
 @include mq(25em) {
     .movie-specs {
         font-size: 1rem;
