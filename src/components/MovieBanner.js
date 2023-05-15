@@ -3,7 +3,7 @@ import isFav from '../utilities/isFav';
 import FavButton from './FavButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
-import noBanner from '../images/no-banner.jpg';
+import noBanner from '../images/no-banner.png';
 
 function MovieBanner({movies}) {
 
