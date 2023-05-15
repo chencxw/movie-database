@@ -7,7 +7,7 @@ import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
 import noPoster from '../images/no-movie-poster.png';
 import {useState, useEffect } from "react";
-
+import { roundRating } from './SingleMovie';
 
 function MovieCard({movies}) {
   
@@ -65,7 +65,7 @@ function MovieCard({movies}) {
               <div className={(movies.id === isSelected && isClicked) ? 
                               'movie-card-overlay show-overlay' : 
                               'movie-card-overlay'} >
-                <p className="movie-rate">{starSVG} {movies.vote_average}</p>
+                <p className="movie-rate">{starSVG} {roundRating(`${movies.vote_average}`)}</p>
                 <p className="movie-overview">{movies.overview}</p>
                 <div className="btn-favourite">
                   {isFav(favs, null, movies.id) ?
