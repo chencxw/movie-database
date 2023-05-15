@@ -132,16 +132,6 @@
   }
 }
 
-@include mq($laptop) {
-  // .movie-card-overlay {
-  //   visibility: visible;
-  //   opacity: 0;
-  // }
-  // .movie-card-overlay:hover {
-  //   opacity: 1;
-  // }
-}
-
 .MuiPagination-ul {
   justify-content: center;
 }
@@ -149,7 +139,7 @@
 .MuiSvgIcon-root,
 .MuiButtonBase-root,
 .MuiPaginationItem-root {
-  color: white !important;
+  color: $light !important;
 }
 
 .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {

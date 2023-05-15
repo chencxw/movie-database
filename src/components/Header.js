@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import NavMenu from './NavMenu';
 import logo from '../images/logo.png';
-import SearchBar from './SearchBar';
 
 function Header() {
 
@@ -37,7 +36,6 @@ function Header() {
         </span>
         <span className="sr-only">Menu</span>
       </button>
-      {/* <SearchBar /> */}
       <NavMenu showHideNav={showHideNav} />
     </header>
   )

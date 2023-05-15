@@ -39,15 +39,6 @@ function PageHome({ sort = "popular" }) {
     fetchMovies();
   }, [sort, currentPage]);
 
-  // useEffect(() => {
-  //   // if ( ref.current && !firstRenderRef.current) {
-  //   //   ref.current.scrollIntoView({ behavior: "smooth" });
-  //   // }
-  //   // firstRenderRef.current = false;
-  // }, [currentPage]);
-
-
-
   const handlePageChange = (event, newPage) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
     setCurrentPage(newPage);

@@ -8,8 +8,6 @@ function PageSearch() {
   const baseUrl = "https://api.themoviedb.org/3/search/movie?query=";
   const [results, setResults] = useState();
 
-  // https://api.themoviedb.org/3/search/movie?query=john%20wick&api_key=1e55f4bc336e25a4e8d5e6a0873de6c6&language=en-US&page=1&include_adult=false
-
   useEffect(() => {
     const fetchResults = async () => {
       const response = await fetch(
@@ -40,19 +38,19 @@ function PageSearch() {
         {results ? results.results.length : "Search"} results for...{" "}
         <h3>"{userInput}"</h3>
       </div>
-      {/* {results ? <MovieCard movies={results.results} /> : <div className='loadingMovies'><p>Loading...</p></div>} */}
-      {results ? (
-        results.results.length > 0 ? (
-          <MovieCard movies={results.results} />
-        ) : (
-          <div className="no-result">
-            <p>No Movies Found.</p>
+      {results ? 
+        ( results.results.length > 0 ? 
+          <MovieCard movies={results.results} /> 
+          : ( 
+            <div className="no-result">
+                <p>No Movies Found.</p>
+            </div> 
+            )
+        ) 
+        : (
+          <div className="loadingMovies">
+            <p>Loading...</p>
           </div>
-        )
-      ) : (
-        <div className="loadingMovies">
-          <p>Loading...</p>
-        </div>
       )}
     </section>
   );

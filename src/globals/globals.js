@@ -63,8 +63,6 @@ export const searchSVG = (
   </svg>
 );
 
-// https://api.themoviedb.org/3/movie/550?api_key=1e55f4bc336e25a4e8d5e6a0873de6c6
-
-const APP_FOLDER_NAME = "movie-mania";
+const APP_FOLDER_NAME = "movie-database";
 const OTHER_GLOBAL = "other-global";
 export { APP_FOLDER_NAME, OTHER_GLOBAL };

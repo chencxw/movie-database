@@ -19,28 +19,6 @@ function FilterButtons() {
         <option value="/sort/now-playing">Now Playing</option>
         <option value="/sort/upcoming">Upcoming</option>
       </select>
-      {/* <ul>
-        <li>
-          <Link to="/sort/popular" activeClassName="active">
-            Popular
-          </Link>
-        </li>
-        <li>
-          <Link to="/sort/top-rated" activeClassName="active">
-            Top Rated
-          </Link>
-        </li>
-        <li>
-          <Link to="/sort/now-playing" activeClassName="active">
-            Now Playing
-          </Link>
-        </li>
-        <li>
-          <Link to="/sort/upcoming" activeClassName="active">
-            Upcoming
-          </Link>
-        </li>
-      </ul> */}
     </nav>
   );
 }

@@ -7,7 +7,7 @@ function NavMenu({showHideNav}) {
     if(window.innerWidth < 800) {
       showHideNav();
     }else{
-      e.target.blur()
+      e.target.blur();
     }
   }
 

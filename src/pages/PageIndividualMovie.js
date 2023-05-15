@@ -8,14 +8,9 @@ function PageIndividualMovie() {
   const baseUrl = 'https://api.themoviedb.org/3'
   const { id } = useParams();
   const [movie, setMovie] = useState();
-
-  // https://api.themoviedb.org/3/movie/640146/videos?api_key=1e55f4bc336e25a4e8d5e6a0873de6c6&language=en-US
   const [videos, setVideos] = useState();
 
   useEffect(() => {
-
-    // window.scrollTo(0, 0);
-
     window.scrollTo({
       top: 0,
       left: 0,

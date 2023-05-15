@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { searchSVG } from '../globals/globals';
-import {useState} from 'react'
 
 function SearchBar({closeNavMenu}) {
 

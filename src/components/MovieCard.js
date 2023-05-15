@@ -1,4 +1,3 @@
-// import { Link, useParams } from 'react-router-dom';
 import MoreInfoButton from './MoreInfoButton';
 import FavButton from './FavButton';
 import { starSVG } from "../globals/globals";
@@ -6,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 import isFav from '../utilities/isFav';
 import noPoster from '../images/no-movie-poster.png';
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { roundRating } from './SingleMovie';
 
 function MovieCard({movies}) {
