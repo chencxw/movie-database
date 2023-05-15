@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { appTitle, apiKey, API_TOKEN } from "../globals/globals";
+import { appTitle, API_TOKEN } from "../globals/globals";
 import MovieCard from "../components/MovieCard";
 import MovieBanner from "../components/MovieBanner";
 import FilterButtons from "../components/FilterButtons";
