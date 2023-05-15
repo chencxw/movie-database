@@ -11,7 +11,10 @@ function SearchBar({closeNavMenu}) {
 
     let q = e.target.elements.search.value;
 
+    if (q !== "") {
     navigate(`/search/${q}`);
+    }
+    
   }
 
   return (
