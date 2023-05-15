@@ -5,6 +5,10 @@ import FavButton from './FavButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
 
+function roundRating(rating) {
+  let newRating = Math.round(rating * 100) / 100
+  return newRating;
+}
 
 function SingleMovie({movie, videos}) {
   const [matches, setMatches] = useState(false);
@@ -33,11 +37,6 @@ function SingleMovie({movie, videos}) {
     let minutes = time % 60;
 
     return (`${hours}H ${minutes}M`)
-  }
-
-  function roundRating(rating) {
-    let newRating = Math.round(rating * 100) / 100
-    return newRating;
   }
 
   const dispatch = useDispatch();
@@ -84,4 +83,5 @@ function SingleMovie({movie, videos}) {
   )
 }
 
+export {roundRating}
 export default SingleMovie
