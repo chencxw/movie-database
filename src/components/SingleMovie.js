@@ -4,6 +4,7 @@ import isFav from '../utilities/isFav';
 import FavButton from './FavButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFav, deleteFav } from '../features/favsSlice';
+import noBanner from '../images/no-banner.jpg';
 
 function roundRating(rating) {
   let newRating = Math.round(rating * 100) / 100
@@ -57,7 +58,7 @@ function SingleMovie({movie, videos}) {
       <div className={matches ? "single-movie-poster" : "hide-poster"} >
         { movie.backdrop_path ? 
         <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={`${movie.title} Poster`} />
-        : <div className="no-backdrop"></div>}
+        : <img src={noBanner} alt="No banner available." />}
         <div className="bottom-gradient-single"></div>
       </div>
 
