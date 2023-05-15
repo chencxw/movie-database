@@ -63,6 +63,8 @@ export const searchSVG = (
   </svg>
 );
 
-const APP_FOLDER_NAME = "movie-database";
+
+
+const APP_FOLDER_NAME = "movie-mania";
 const OTHER_GLOBAL = "other-global";
 export { APP_FOLDER_NAME, OTHER_GLOBAL };
