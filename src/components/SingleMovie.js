@@ -55,7 +55,9 @@ function SingleMovie({movie, videos}) {
   return (
     <section className="individual-movie" style={matches ? {backgroundImage: "none"} : {backgroundImage: movie.backdrop_path && `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`} }>
       <div className={matches ? "single-movie-poster" : "hide-poster"} >
+        { movie.backdrop_path ? 
         <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt={`${movie.title} Poster`} />
+        : <div className="no-backdrop"></div>}
         <div className="bottom-gradient-single"></div>
       </div>
 
@@ -77,8 +79,10 @@ function SingleMovie({movie, videos}) {
         }
       </div>
 
-      <iframe className="trailer" src={`https://www.youtube.com/embed/${videos.results[0].key}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-      </div>
+      {videos.results[0] &&
+      <iframe className="trailer" src={`https://www.youtube.com/embed/${videos.results[0].key}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>}
+
+    </div>
     </section>
   )
 }
