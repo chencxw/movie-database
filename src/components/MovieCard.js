@@ -55,7 +55,7 @@ function MovieCard({movies}) {
     <div className="movie-container">
         {movies.map(movies => (
           <article className="movie" key={movies.id} >
-            <div className="movie-card" onClick={matches ? () => handleIsClicked(movies.id) : null}>
+            <div className="movie-card" onTouchStart={matches ? () => handleIsClicked(movies.id) : null} >
               <div className="movie-poster">
                 {movies.poster_path === null ?
                   <img src={noPoster} alt="No poster available." /> :
