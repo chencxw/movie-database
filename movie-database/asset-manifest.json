@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/movie-database/static/css/main.83dea1f1.css",
+    "main.js": "/movie-database/static/js/main.4196f0b2.js",
+    "static/media/no-banner.png": "/movie-database/static/media/no-banner.bb23dd4f2bd8a9d9c0fe.png",
+    "static/media/no-movie-poster.png": "/movie-database/static/media/no-movie-poster.96df85d20a30e420c840.png",
+    "static/media/logo.png": "/movie-database/static/media/logo.b58bc9323e283ccdf178.png",
+    "index.html": "/movie-database/index.html",
+    "static/media/tmbdLogo.svg": "/movie-database/static/media/tmbdLogo.bb8aa703cb92c9aa31fc1e0b17850ed9.svg",
+    "main.83dea1f1.css.map": "/movie-database/static/css/main.83dea1f1.css.map",
+    "main.4196f0b2.js.map": "/movie-database/static/js/main.4196f0b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83dea1f1.css",
+    "static/js/main.4196f0b2.js"
+  ]
+}
