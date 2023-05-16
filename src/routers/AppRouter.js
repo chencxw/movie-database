@@ -1,5 +1,6 @@
 // Development Components
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { APP_FOLDER_NAME } from "../globals/globals";
 
 // Components
 import Header from '../components/Header';
@@ -15,11 +16,11 @@ import PageSearch from '../pages/PageSearch';
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/${APP_FOLDER_NAME}`} >
       <div className="wrapper">
         <Header/>
             <Routes>
-                <Route path="/movie-database" exact element={<PageHome/>}  />
+                <Route path="/" exact element={<PageHome/>}  />
                 <Route path="/about" element={<PageAbout />} />
                 <Route path="/favourites" element={<PageFavourite />} />
                 <Route path="/search/:userInput" element={<PageSearch />} />

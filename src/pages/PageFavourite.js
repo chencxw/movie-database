@@ -18,7 +18,7 @@ function PageFavourite() {
         {favs.length < 1 ? (
           <div className="no-favourites">
             <p>
-              No movies have been added to favourites. Go back to the <Link to="/movie-database">home page</Link> to add some.
+              No movies have been added to favourites. Go back to the <Link to="/">home page</Link> to add some.
             </p>
           </div>
         ) : (
