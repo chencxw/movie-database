@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <header className={ navOpen? 'show' : undefined } id="page-header" >
-      <Link className="logo" to={'/'}><img src={logo} alt="logo" /></Link>
+      <Link className="logo" to={'/movie-database'}><img src={logo} alt="logo" /></Link>
       <button className='hamburger-btn' onMouseDown={(e) => {e.preventDefault();}} onClick={showHideNav} >
         <span className="hamburger-icon">
           <span className="line"></span>

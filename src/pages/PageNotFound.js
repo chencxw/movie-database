@@ -15,7 +15,7 @@ function PageNotFound() {
           <h2>404</h2>
           <h3>Page not found.</h3>
           <p>The page you were looking for does not exist.</p>
-          <p><Link to="/">Back to home</Link></p>
+          <p><Link to="/movie-database">Back to home</Link></p>
         </section>
       </main>
     );
